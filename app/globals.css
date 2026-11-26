@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@import "@fontsource-variable/baloo-bhaijaan-2/index.css";
+@import "@fontsource-variable/readex-pro/index.css";
+@import "@fontsource-variable/syne/index.css";
+@import "@fontsource-variable/alexandria/index.css";
+
+/* Colour values come from config/site.ts (injected on <html> in layout.tsx). */
+@theme inline {
+  --color-paper: var(--c-paper);
+  --color-lavender: var(--c-lavender);
+  --color-lilac: var(--c-lilac);
+  --color-purple: var(--c-purple);
+  --color-plum: var(--c-plum);
+  --color-plum-soft: var(--c-plumSoft);
+  --color-mint: var(--c-mint);
+  --color-mint-soft: var(--c-mintSoft);
+  --color-mint-deep: var(--c-mintDeep);
+  --color-alert: var(--c-alert);
+
+  --font-display: "Baloo Bhaijaan 2 Variable", "Readex Pro Variable", system-ui, sans-serif;
+  --font-scene: "Syne Variable", "Alexandria Variable", system-ui, sans-serif;
+  --font-body: "Readex Pro Variable", system-ui, sans-serif;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  background: var(--c-paper);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--c-plum);
+  background: var(--c-paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scene (booking site) */
+.scene-logo {
+  font-family: "Syne Variable", sans-serif;
+  font-weight: 760;
+  letter-spacing: -0.055em;
+}
+.headline {
+  font-family: var(--font-scene);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.latin-display {
+  font-family: "Syne Variable", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+}
+
+/* Fitback reveal */
+.display {
+  font-family: var(--font-display);
+  font-weight: 750;
+  line-height: 1.1;
+}
+
+:focus-visible {
+  outline: 2.5px solid var(--c-purple);
+  outline-offset: 2px;
+  border-radius: 10px;
+}
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
